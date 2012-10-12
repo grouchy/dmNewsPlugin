@@ -1,0 +1,24 @@
+News: 
+  actAs:
+    DmSortable: 
+    I18n:
+      fields: [ title, extract, body, is_active, meta_keywords, meta_description ]  
+      actAs:       
+        Timestampable:
+        DmVersionable:
+  columns:
+    published:        { type: timestamp, notnull: true } # Date of the news
+    title:            { type: string(255), notnull: true }      
+    extract:          { type: string(2000), notnull: true }  
+    body:             { type: clob, extra: tinymce}     
+    image:            { type: integer, notnull: true }  
+    is_active:        { type: boolean, notnull: true, default: false }     
+    meta_keywords:    { type: string(255), notnull: true } 
+    meta_description: { type: string(255), notnull: true }
+  relations:  
+    Image:  
+      class:          DmMedia  
+      local:          image  
+      foreignAlias:   News
+      
+      

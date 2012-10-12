@@ -1,0 +1,18 @@
+Content:  
+
+  PressCenter:  
+
+    News: 
+      front:                  true
+      admin:                  true
+      model:                  News  
+      page:                   true  
+      name:                   News|News  
+      components:  
+        list:  
+        show:  
+        showImage:
+          type:               show
+        shortList:
+          type:               list
+        dates:
